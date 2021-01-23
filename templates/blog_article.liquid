@@ -1,0 +1,18 @@
+---js
+{
+  pagination: {
+    data: "pages",
+    size: 1,
+    alias: "story",
+    before: function(data) {
+      return data.filter((entry) => entry.data.component === 'blog_article');
+    },
+    addAllPagesToCollections: true
+  },
+  permalink: "{{ story.permalink | slug }}/",
+  tags: "article",
+  layout: "layout.liquid"
+}
+---
+
+<h1>{{ story.name }}</h1>

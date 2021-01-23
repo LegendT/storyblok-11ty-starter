@@ -1,0 +1,25 @@
+{
+  "name": "storyblok-11ty-starter",
+  "version": "0.1.0",
+  "description": "This is a basic Storyblok starter with 11ty.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "watch": "npx eleventy --watch",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "keywords": [
+    "Storyblok",
+    "11ty"
+  ],
+  "author": {
+    "name": "Christian Zoppi",
+    "email": "me@christianzoppi.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "storyblok-11ty": "^1.6.0"
+  }
+}
