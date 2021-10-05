@@ -1,0 +1,16 @@
+ <div>
+ {% if block.name.size > 1 %}
+ Authors:
+{% else %}
+ Author
+ {% endif %}
+    <ul>
+        {%- for person in block.name %}
+        <li>
+            
+            {{ person }}
+            
+        </li>
+        {%- endfor%}
+    </ul>
+</div>

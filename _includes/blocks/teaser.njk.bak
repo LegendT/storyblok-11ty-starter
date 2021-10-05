@@ -1,0 +1,4 @@
+{{block._editable}}
+<div>
+  <h2>HeadingZ: {{ block.headline | safe }}</h2>
+</div>

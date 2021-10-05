@@ -1,31 +1,39 @@
 {
-  "name": "storyblok-11ty-starter",
-  "version": "0.1.0",
-  "description": "This is a basic Storyblok starter with 11ty.",
-  "main": "index.js",
-  "scripts": {
-    "build": "npx eleventy",
-    "watch": "npx eleventy --watch",
-    "serve": "npx eleventy --serve",
-    "debug": "DEBUG=* npx eleventy",
-    "rebuild": "node rebuild-preview",
-    "start": "concurrently \"npm:rebuild\" \"npm:serve\""
-  },
-  "keywords": [
-    "Storyblok",
-    "11ty"
-  ],
-  "author": {
-    "name": "Christian Zoppi",
-    "email": "me@christianzoppi.com"
-  },
-  "license": "ISC",
-  "devDependencies": {
-    "dotenv": "^8.2.0",
-    "storyblok-11ty": "^1.6.0"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "concurrently": "^6.2.0"
-  }
+	"name": "storyblok-11ty-starter",
+	"version": "0.1.0",
+	"description": "This is a basic Storyblok starter with 11ty and WCAG Reporting tool.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "eleventy --serve",
+		"build": "npx eleventy",
+		"watch": "npx eleventy --watch",
+		"serve": "npx eleventy --serve",
+		"debug": "DEBUG=* npx eleventy",
+		"create-pdf": "./create_report.sh",
+		"add-report": "node add-report.js",
+		"rebuild": "node rebuild-preview",
+		"start": "concurrently \"npm:rebuild\" \"npm:serve\""
+	},
+	"keywords": [
+		"Storyblok",
+		"11ty"
+	],
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+		"eleventy-plugin-markdown-shortcode": "^1.1.0",
+		"copy": "0.3.2",
+		"fs": "0.0.1-security",
+		"open-editor": "3.0.0",
+		"prince": "^1.8.3",
+		"prompt": "1.1.0",
+		"slugify": "1.5.3",
+		"dotenv": "^8.2.0",
+		"storyblok-11ty": "^1.6.0"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"@11ty/eleventy": "^0.12.1",
+		"concurrently": "^6.2.0"
+	}
 }
