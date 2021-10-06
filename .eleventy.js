@@ -7,19 +7,30 @@ const fs = require('fs')
 const path = require('path')
 const markdownShortcode = require('eleventy-plugin-markdown-shortcode')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const scTable = require('./_utils/scTable.js')
-const sampleImage = require('./_utils/sampleImage.js')
-const scUri = require('./_utils/scUri.js')
-const scName = require('./_utils/scName.js')
-const slugify = require('./_utils/slugify.js')
+const scTable = require('./src/_utils/scTable.js')
+const sampleImage = require('./src/_utils/sampleImage.js')
+const scUri = require('./src/_utils/scUri.js')
+const scName = require('./src/_utils/scName.js')
+const slugify = require('./src/_utils/slugify.js')
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addPassthroughCopy({ src: './' })
+	// passthrough
+	eleventyConfig.addPassthroughCopy('assets')
+
+	// plugins
 	eleventyConfig.addPlugin(sbto11ty)
+	eleventyConfig.addPlugin(markdownShortcode)
+	eleventyConfig.addPlugin(syntaxHighlight)
+
+	// filters
+	eleventyConfig.addFilter('sc_uri', scUri)
+	eleventyConfig.addFilter('sc_name', scName)
+	eleventyConfig.addFilter('slugify', slugify)
 
 	// Base Config
 	return {
 		dir: {
+			input: 'src',
 			output: '_site',
 			includes: '_includes',
 			layouts: '_layouts',
