@@ -15,7 +15,7 @@ const slugify = require('./src/_utils/slugify.js')
 
 module.exports = function (eleventyConfig) {
 	// passthrough
-	eleventyConfig.addPassthroughCopy('assets')
+	eleventyConfig.addPassthroughCopy('./src/_assets')
 
 	// plugins
 	eleventyConfig.addPlugin(sbto11ty)

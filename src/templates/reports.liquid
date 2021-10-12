@@ -1,7 +1,7 @@
 ---js
 {
   pagination: {
-    data: "pages",
+    data: "reports",
     size: 1,
     alias: "story",
     before: function(data) {
@@ -9,7 +9,7 @@
     },
     addAllPagesToCollections: true
   },
-  permalink: "{{ story.permalink | slug }}/",
+  permalink: "/{{ story.permalink }}",
   tags: "report",
   layout: "layout.liquid"
 }
